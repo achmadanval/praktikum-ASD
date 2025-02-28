@@ -20,7 +20,6 @@ public class MataKuliah02{
         this.jumlahJam = jumlahJam ;
     }
     public void tambahData(Scanner sc){
-        Scanner sc =new Scanner (System.in);
          System.out.print("Apakah Matakuliah Anda terdapat kode? (ya/tidak): ");
         String pilihan = sc.nextLine();
 
