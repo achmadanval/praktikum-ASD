@@ -4,9 +4,6 @@ public class Mahasiswa02 {
     String kelas;
     double ipk;
 
-    Mahasiswa02(){
-
-    }
     Mahasiswa02(String nm , String name, String kls , double ip){
         nim = nm;
         nama = name;
