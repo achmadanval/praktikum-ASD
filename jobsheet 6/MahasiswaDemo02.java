@@ -36,5 +36,9 @@ public class MahasiswaDemo02 {
         System.out.println("Data yang sudah terurut menggunakan SELECTIONSORT (ASC) " );
         list.selectionSort();
         list.tampil();
+
+        System.out.println("Data yang sudah terurut menggunakan INSERTIONSORT (DES) " );
+        list.insertionSort();
+        list.tampil();
     }
 }

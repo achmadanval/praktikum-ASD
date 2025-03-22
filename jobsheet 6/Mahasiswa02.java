@@ -12,9 +12,9 @@ public class Mahasiswa02 {
     }
 
     void tampilInformasi(){
-        System.out.println("Nama " + nama);
-        System.out.println("NIM " + nim);
-        System.out.println("Kelas " + kelas);
-        System.out.println("IPK " + ipk);
+        System.out.println("Nama  : " + nama);
+        System.out.println("NIM   : " + nim);
+        System.out.println("Kelas : " + kelas);
+        System.out.println("IPK   : " + ipk);
     }
 }
