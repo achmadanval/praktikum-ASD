@@ -19,10 +19,8 @@ public class MahasiswaBerprestasi02 {
 
     void tampil(){
         for(Mahasiswa02 m : listMHS){
-            if (m != null) {
-                m.tampilInformasi();
-                System.out.println("--------------------------------------");
-            }
+            m.tampilInformasi();
+            System.out.println("--------------------------------------");
         }
     }
 
@@ -35,6 +33,20 @@ public class MahasiswaBerprestasi02 {
                     listMHS[j - 1] = temp;
                 }
             }
+        }
+    }
+
+    void selectionSort(){
+        for (int i = 0; i < listMHS.length-1; i++) {
+            int idxMin = i;
+            for (int j = i+1; j < listMHS.length; j++) {
+                if (listMHS[j].ipk < listMHS[idxMin].ipk) {
+                    idxMin = j;
+                }
+            }
+            Mahasiswa02 temp = listMHS[idxMin];
+            listMHS[idxMin]= listMHS[i];
+            listMHS[i] = temp;
         }
     }
 }    

@@ -13,15 +13,16 @@ public class MahasiswaDemo02 {
             System.out.println("\nMasukkan data mahasiswa ke- " + (i+1));
             System.out.print("NIM : ");
             String nim = sc.nextLine();
-            sc.nextLine();
+  
             System.out.print("Nama : ");
-            String nama = sc.nextLine();
-            sc.nextLine();
+            String nama = sc.next();
+
             System.out.print("Kelas : ");
-            String kelas = sc.nextLine();
-            sc.nextLine();
+            String kelas = sc.next();
+
             System.out.print("IPK : ");
             double ipk = sc.nextDouble();
+            sc.nextLine();
             
             list.tambah(new Mahasiswa02(nim, nama, kelas, ipk));
         }
@@ -30,6 +31,10 @@ public class MahasiswaDemo02 {
 
         System.out.println("Data Mahasiswa Setelah sorting berdasarkan IPK (DESC) :  ");
         list.bubbleSort();
+        list.tampil();
+
+        System.out.println("Data yang sudah terurut menggunakan SELECTIONSORT (ASC) " );
+        list.selectionSort();
         list.tampil();
     }
 }
