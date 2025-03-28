@@ -62,16 +62,47 @@ public class DataDosen02 {
         }
     }
 
-    void debugArray() {
-        System.out.println("==== DEBUG: Isi Array ====");
-        for (int i = 0; i < idx; i++) {
-            if (dados[i] != null) {
-                System.out.println("[" + i + "] Nama: " + dados[i].nama + ", Usia: " + dados[i].usia);
-            } else {
-                System.out.println("[" + i + "] NULL");
+    
+    int PencarianDataSquential02(String cari){
+        int posisi= -1;
+        for (int j = 0; j < idx; j++) {
+            if (dados[j].nama.equalsIgnoreCase(cari)) {
+                posisi = j;
+                break;
             }
         }
-        System.out.println("=========================");
+        return posisi;
     }
-    
+
+    void tampilPosisi(String cari, int pos){
+        if (pos!=-1) {
+            System.out.println("Data Dosen dengan Nama : " +cari + " ditemukan pada indeks " + pos);
+        }else{
+            System.out.println("Data "+ cari + " Tidak ditemukan");
+        }
+    }
+
+    void tampilDataPencarian(double x, int pos){
+        if (pos != -1) {
+            System.out.println("Kode\t : " + dados[pos].kode);
+            System.out.println("Nama \t : " + dados[pos].nama);
+            System.out.println("Jenis kelamin\t : " + (dados[pos].jenisKelamin ? "Laki - laki " : "Perempuan"));
+            System.out.println("Usia\t : " + dados[pos].usia);
+        }
+    }
+
+    int PencarianDataBinary02(double cari, int left ,int right){
+        int mid;
+        if (right >= left) {
+            mid = (left + right)/2;
+            if (cari == dados[mid].usia) {
+                return mid;
+            }else if(dados[mid].usia > cari){ 
+                return PencarianDataBinary02(cari, left, mid-1);
+            }else{
+                return PencarianDataBinary02(cari, mid +1, right);
+            }
+        }
+        return -1;
+    }
 }
