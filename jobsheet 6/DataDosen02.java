@@ -1,5 +1,5 @@
 public class DataDosen02 {
-    Dosen02[] dados = new Dosen02[4];
+    Dosen02[] dados = new Dosen02[5];
     int idx = 0;
 
     void tambah(Dosen02 dsn){
@@ -39,7 +39,6 @@ public class DataDosen02 {
         } 
     }
     void tampilInformasi(){
-        System.out.println("DEBUG: Total Data = " + idx);
         if (idx == 0) {
             System.out.println("Tidak ada data yang tersimpan.");
             return;
@@ -63,15 +62,20 @@ public class DataDosen02 {
     }
 
     
-    int PencarianDataSquential02(String cari){
-        int posisi= -1;
+    void PencarianDataSquential02(String cari){
+        int jmlDitemukan= 0;
         for (int j = 0; j < idx; j++) {
             if (dados[j].nama.equalsIgnoreCase(cari)) {
-                posisi = j;
-                break;
+                dados[j].tampil();
+                System.out.println("-------------------------------------");
+                jmlDitemukan++;
             }
         }
-        return posisi;
+        if (jmlDitemukan == 0) {
+            System.out.println("Data dosen dengan nama " + cari + " tidak ditemukan");
+        }else if(jmlDitemukan > 1){
+            System.out.println("Peringatan : Ditemukan lebih dari 1 dosen dengan nama "+ cari);
+        }
     }
 
     void tampilPosisi(String cari, int pos){
@@ -91,18 +95,39 @@ public class DataDosen02 {
         }
     }
 
-    int PencarianDataBinary02(double cari, int left ,int right){
-        int mid;
-        if (right >= left) {
-            mid = (left + right)/2;
-            if (cari == dados[mid].usia) {
-                return mid;
+    void PencarianDataBinary02(int cari){
+        insertionSort();
+        int left = 0, right = idx - 1;
+        int posisi = -1;
+
+        while (left <= right) {
+            int mid = (left + right)/2;
+            if (dados[mid].usia== cari) {
+                posisi = mid;
+                break;
             }else if(dados[mid].usia > cari){ 
-                return PencarianDataBinary02(cari, left, mid-1);
+                left = mid + 1;
             }else{
-                return PencarianDataBinary02(cari, mid +1, right);
+                right = mid - 1;
             }
         }
-        return -1;
+        if (posisi == -1) {
+            System.out.println("Data dosen dengan usia " + cari + " tidak ditemukan." );
+            return;
+        }
+        int jmlDitemukan = 0;
+        for (int i = posisi + 1; i < idx && dados[i].usia == cari; i++) {
+            dados[i].tampil();
+            System.out.println("----------------------------");
+            jmlDitemukan++;
+        }
+        for (int i = posisi ; i >= 0 && dados[i].usia == cari; i--) {
+            dados[i].tampil();
+            System.out.println("----------------------------");
+            jmlDitemukan++;
+        }
+        if (jmlDitemukan > 1) {
+            System.out.println("Peringatan : Ditemukan lebih dari satu dosen dengan usia terebut");
+        }
     }
 }
