@@ -1,7 +1,7 @@
 public class Mahasiswa {
     String NIM,nama,prodi;
 
-    Mahasiswa{
+    Mahasiswa(){
 
     }
     Mahasiswa(String NIM,String nama, String prodi){
@@ -11,8 +11,7 @@ public class Mahasiswa {
     }
 
     void tampilMahasiswa(){
-        System.out.println("NIM     : " + NIM);
-        System.out.println("Nama    : " + nama);
-        System.out.println("Prodi   : " + prodi);
+        System.out.println("NIM     : " + NIM + "|" + "Nama    : " + nama + "|" + "Prodi   : " + prodi );
+
     }
 }

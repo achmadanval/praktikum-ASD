@@ -9,8 +9,6 @@ public class MataKuliah {
     }
 
     void tampilMatakuliah(){
-        System.out.println("Kode Matkul : " + kodeMK);
-        System.out.println("Nama Matkul : " + namaMK);
-        System.out.println("SKS         : " + sks);
+        System.out.println("Kode Matkul : " + kodeMK +"|"+ "Nama Matkul : " + namaMK +"|" + "SKS         : " + sks);
     }
 }
