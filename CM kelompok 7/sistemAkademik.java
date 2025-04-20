@@ -48,7 +48,20 @@ public class sistemAkademik {
                 Penilaian n = new Penilaian(null,null,0,0,0);
                 n.UrutanDSC(daftarNilai);
             }else if (pilih == 5) {
-                
+                sc.nextLine(); // untuk membersihkan buffer newline
+                    System.out.print("Masukkan NIM Mahasiswa yang dicari: ");
+                    String cariNIM = sc.nextLine();
+                    boolean ditemukan = false;
+                    for (Mahasiswa mhs : daftarMhs) {
+                        if (mhs.NIM.equalsIgnoreCase(cariNIM)) {
+                            mhs.tampilMahasiswa();
+                            ditemukan = true;
+                            break;
+                        }
+                    }
+                    if (!ditemukan) {
+                        System.out.println("Mahasiswa dengan NIM " + cariNIM + " tidak ditemukan.");
+                    }
             }else if (pilih == 0) {
                 System.out.print("Terima kasih ! ");
                 break;
