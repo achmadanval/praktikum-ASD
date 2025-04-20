@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Mahasiswa {
     String NIM,nama,prodi;
 
@@ -14,4 +16,25 @@ public class Mahasiswa {
         System.out.println("NIM     : " + NIM + "|" + "Nama    : " + nama + "|" + "Prodi   : " + prodi );
 
     }
+
+    
+    static void cariMahasiswa(Mahasiswa[] daftar) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan NIM Mahasiswa yang dicari: ");
+        String nimDicari = input.nextLine();
+        
+        boolean ditemukan = false;
+        for (Mahasiswa mhs : daftar) {
+            if (mhs.NIM.equalsIgnoreCase(nimDicari)) {
+                mhs.tampilMahasiswa();
+                ditemukan = true;
+                break;
+            }
+        }
+
+        if (!ditemukan) {
+            System.out.println("Mahasiswa dengan NIM " + nimDicari + " tidak ditemukan.");
+        }
+    }
+
 }

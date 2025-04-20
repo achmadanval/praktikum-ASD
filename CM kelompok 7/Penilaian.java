@@ -18,6 +18,8 @@ public class Penilaian {
     void tampilInfo(){
         System.out.println(mahasiswa.nama + " | " + mataKuliah.namaMK + " | Nilai akhir : " + nilaiAkhir());
     }
+
+    //ini pakek selection sort jadinya
     void UrutanDSC(Penilaian[] data){
         for (int i = 0; i < data.length; i++) {
             int max = i;
