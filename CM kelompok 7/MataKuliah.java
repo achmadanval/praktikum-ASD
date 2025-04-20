@@ -1,6 +1,9 @@
 public class MataKuliah {
     String kodeMK,namaMK;
     int sks;
+    MataKuliah(){
+        
+    }
 
     MataKuliah(String kodeMK,String namaMK,int sks){
         this.kodeMK = kodeMK;
