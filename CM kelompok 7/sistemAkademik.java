@@ -49,7 +49,6 @@ public class sistemAkademik {
                 n.UrutanDSC(daftarNilai);
             } else if (pilih == 5) {
                 Mahasiswa.cariMahasiswa(daftarMhs);
-            
             }else if (pilih == 0) {
                 System.out.print("Terima kasih ! ");
                 break;

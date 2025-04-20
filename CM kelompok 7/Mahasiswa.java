@@ -17,7 +17,7 @@ public class Mahasiswa {
 
     }
 
-    
+    //ini linear search
     static void cariMahasiswa(Mahasiswa[] daftar) {
         Scanner input = new Scanner(System.in);
         System.out.print("Masukkan NIM Mahasiswa yang dicari: ");
@@ -29,12 +29,12 @@ public class Mahasiswa {
                 mhs.tampilMahasiswa();
                 ditemukan = true;
                 break;
+            } else {
+                System.out.println("Mahasiswa dengan NIM " + nimDicari + " tidak ditemukan.");
             }
         }
 
-        if (!ditemukan) {
-            System.out.println("Mahasiswa dengan NIM " + nimDicari + " tidak ditemukan.");
-        }
+        
     }
 
 }
