@@ -11,6 +11,7 @@ public class MahasiswaDemo02 {
             System.out.println("2. Menilai Tugas");
             System.out.println("3. Melihat Tugas Teratas");
             System.out.println("4. Melihat Daftar Tugas ");
+            System.out.println("5. Banyak tugas yang sudah dikumpulkan ");
             System.out.print("Pilih : ");
             pilih = sc.nextInt();
         
@@ -35,7 +36,7 @@ public class MahasiswaDemo02 {
                         System.out.print("Masukkan nilai dari (0 - 100) :");
                         int nilai = sc.nextInt();
                         dinilai.tugasDinilai(nilai);
-                        System.out.printf("Nilai Tugas %s adalah %d\n " ,dinilai.nama, nilai);
+                        System.out.printf("Nilai Tugas %s adalah %d\n " , dinilai.nama, nilai);
                     }
                     break;
 
@@ -50,6 +51,8 @@ public class MahasiswaDemo02 {
                     System.out.println("Nama\tNIM\tkelas");
                     stack.print();
                     break;
+                case 5:
+                    stack.jmlTugas();
                 default:
                     System.out.println("Pilihan tidak valid!!");
             }

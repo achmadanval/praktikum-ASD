@@ -9,11 +9,7 @@ public class StackTugasMahasiswa02 {
     }
 
     public boolean isFull(){
-        if (top == size -1) {
-            return true;
-        }else{
-            return false;
-        }
+        return top == stack.length - 1;
     }
 
     public boolean isEmpty(){
@@ -48,6 +44,14 @@ public class StackTugasMahasiswa02 {
         }else{
             System.out.println("Stack masih kosong, tidak ada tugas yang dikumpulkan !");
             return null;
+        }
+    }
+
+    public void jmlTugas(){
+        if (isEmpty()) {
+            System.out.println("Belum ada tugas yang dikumpulkan");
+        } else {
+            System.out.println("Banyak tugas yang sudah dikumpulkan sebanyak " + (top + 1));
         }
     }
 
