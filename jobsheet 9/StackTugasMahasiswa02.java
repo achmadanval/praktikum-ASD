@@ -62,12 +62,12 @@ public class StackTugasMahasiswa02 {
         System.out.println(" ");
     }
 
-    public String konversiDesimalKeBiner(int nilai){
+    public String konversiDesimalKeBiner(int kode){
         StackKonversi stack = new StackKonversi();
-        while (nilai  > 0) {
-            int sisa = nilai % 2;
+        while (kode != 0) {
+            int sisa = kode % 2;
             stack.push(sisa);
-            nilai = nilai /2;
+            kode = kode /2;
         }
         String biner = new String();
         while (!stack.isEmpty()) {
