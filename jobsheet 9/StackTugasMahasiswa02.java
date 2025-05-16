@@ -61,4 +61,18 @@ public class StackTugasMahasiswa02 {
         }
         System.out.println(" ");
     }
+
+    public String konversiDesimalKeBiner(int nilai){
+        StackKonversi stack = new StackKonversi();
+        while (nilai  > 0) {
+            int sisa = nilai % 2;
+            stack.push(sisa);
+            nilai = nilai /2;
+        }
+        String biner = new String();
+        while (!stack.isEmpty()) {
+            biner += stack.POP();
+        }
+        return biner;
+    }
 }
