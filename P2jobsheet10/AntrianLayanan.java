@@ -50,6 +50,15 @@ public class AntrianLayanan {
             data[front].tampilkanData();
         }
     }
+    public void lihatAkhir (){
+        if (isEmpty()) {
+            System.out.println("Antrian masih kosong");
+        }else{
+            System.out.println("Mahasiswa Antrian Terakhir : ");
+            System.out.println("NIM - NAMA - PRODI - KELAS ");
+            data[rear].tampilkanData();
+        }
+    }
     public void clear (){
         if (!isEmpty()) {
             front = rear = -1;
