@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class SingleLinkList02 {
     NodeMahasiswa02 head;
     NodeMahasiswa02 tail;
@@ -26,7 +28,7 @@ public class SingleLinkList02 {
         }else {
             ndInput.next = head;
             head = ndInput;
-        }
+        }System.out.println("Data " + input.nama + " berhasil di tambahkan ");
     }
     public void addLast(Mahasiswa02 input){
         NodeMahasiswa02 ndInput = new NodeMahasiswa02(input, null);
@@ -36,7 +38,7 @@ public class SingleLinkList02 {
         }else {
             tail.next = ndInput;
             tail = ndInput;
-        }
+        }System.out.println("Data " + input.nama + " berhasil di tambahkan ");
     }
     public void insertAfter( String key, Mahasiswa02 input){
         NodeMahasiswa02 ndInput = new NodeMahasiswa02(input, null);
@@ -45,11 +47,12 @@ public class SingleLinkList02 {
             if (temp.data.nama.equalsIgnoreCase(key)) {
                 ndInput.next = temp.next;
                 temp.next = ndInput;
-                if (ndInput != null) {
+                if (ndInput.next == null) {
                     tail = ndInput;
                 }
                 break;
             }
+            System.out.println("Data " + input.nama + " berhasil di tambahkan ");
             temp = temp.next;
         }while (temp != null );
     }
@@ -61,16 +64,25 @@ public class SingleLinkList02 {
         }else{
             NodeMahasiswa02 temp = head;
             for (int i = 0; i < index - 1; i++) {
-                if (temp == null || temp.next == null) {
-                System.out.println("Index melebihi panjang linked list.");
-                return;
-                }
                 temp = temp.next;
             }
             temp.next = new NodeMahasiswa02(input, temp.next);
             if (temp.next.next == null) {
                 tail = temp.next;
             }
+            System.out.println("Data " + input.nama + " berhasil di tambahkan ");
         }
+    }
+    public static Mahasiswa02 inputDataMahasiswa(Scanner sc){
+        System.out.print("NIM   : ");
+        String nim = sc.nextLine();
+        System.out.print("Nama  : ");
+        String nama = sc.nextLine();
+        System.out.print("Prodi : ");
+        String prodi = sc.nextLine();
+        System.out.print("IPK   : ");
+        double ipk = sc.nextDouble();
+        sc.nextLine();
+        return new Mahasiswa02(nim, nama, prodi, ipk);
     }
 }
