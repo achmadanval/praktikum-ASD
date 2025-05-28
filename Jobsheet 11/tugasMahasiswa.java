@@ -1,9 +1,9 @@
 public class tugasMahasiswa {
     String nim,nama,prodi,kelas;
 
-    tugasMahasiswa(String nim, String nama ,String prodi, String kelas){
-        this.nim = nim;
+    tugasMahasiswa(String nama, String nim ,String prodi, String kelas){
         this.nama = nama;
+        this.nim = nim;
         this.prodi = prodi;
         this.kelas = kelas;
     }
